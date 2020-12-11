@@ -1,0 +1,17 @@
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    networking.gke.io/managed-certificates: rails-sslcert
+  name: rails-ing
+spec:
+  rules:
+  - host: www.armgcp1.tk
+    http:
+      paths:
+      - backend:
+          serviceName: my-rails-app
+          servicePort: 80
+        path: /

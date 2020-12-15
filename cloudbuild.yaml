@@ -1,0 +1,15 @@
+steps:
+#Biuld the Image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build','-t','gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}','.']
+
+#Push the image  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push','gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}']
+
+substitutions:
+    _PROJECT: arctic-dynamo-291018
+    _CONTAINERNAME: rails-repo
+    _VERSION: v1.1 
+options:
+    substitution_option: 'ALLOW_LOOSE'

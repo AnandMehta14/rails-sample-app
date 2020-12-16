@@ -10,6 +10,6 @@ steps:
 substitutions:
     _PROJECT: arctic-dynamo-291018
     _CONTAINERNAME: rails-repo
-    _VERSION: v1.1 
+    _VERSION: v1.2 
 options:
     substitution_option: 'ALLOW_LOOSE'
